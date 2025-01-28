@@ -1,0 +1,30 @@
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: elia
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+    # volumes pour faire persister les données (voir doc)
+      - mongo_data:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+    # sécurité pour rendre disponible qu'en local
+      - 127.0.0.1:8081:8081
+    environment:
+    # config pour se connecter à mongo
+      ME_CONFIG_MONGODB_ADMINUSERNAME: elia
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+      ME_CONFIG_MONGODB_SERVER: mongo
+    #   securité de connexion
+      ME_CONFIG_BASICAUTH: true
+      ME_CONFIG_BASICAUTH_USERNAME: elia
+      ME_CONFIG_BASICAUTH_PASSWORD: admin
+volumes:
+  mongo_data:
+
+  
