@@ -95,22 +95,39 @@
 -   You can base it on the default configuration file to start:
 
 server {
-    # port listened to by Nginx
-    listen 80;
-    # domain listened to by Nginx: we can configure
-    # multiple domains on the same server machine
-    server\_name <your-domain-name>;
 
-    # base route on the domain
-    location / {
-        # this is configuration to pass information that might be interesting for Node
-        proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-        proxy\_set\_header Host $host;
-        # here is THE LINE that counts in this block
-        # the one that tells Nginx to pass the Web request to Node (running on 127.0.0.1:3000)
-        # Node will return an HTTP response to Nginx
-        proxy\_pass http://127.0.0.1:3000;
-    }
+  # port écouté par Nginx
+
+  listen 80;
+
+  # domaine écouté par Nginx : on peut configurer 
+
+  # plusieurs domaines sur une même machine serveur
+
+  server\_name <votre-nom-de-domaine>;
+
+  
+
+  # route de base sur le domaine
+
+  location / {
+
+    # là c'est de la config pour passer des infos qui peuvent être intéressantes pour Node
+
+    proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
+
+    proxy\_set\_header Host $host;
+
+    # ici c'est LA LIGNE qui compte dans ce bloc
+
+    # celle qui indique à Nginx de passer la requête Web à Node (qui tourne sur 127.0.0.1:3000)
+
+    # Node retournera une réponse HTTP (ben, normal quoi) à Nginx
+
+    proxy\_pass http://127.0.0.1:3000;
+
+  }
+
 }
 
 -   Use Ctrl + O to save, then Ctrl + X to exit.
