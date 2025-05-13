@@ -3,13 +3,13 @@
 
 ## Launch
 
-1.  Start your VM
+###.  Start your VM
 2.  Make your VM publicly accessible
 3.  Connect via SSH
 
 -   Use your terminal to connect to your server via SSH
 
-1.  Package updates
+4.  Package updates
 
 -   Run the following commands to update your system packages. This ensures you have the latest software versions and security patches:
 -   sudo apt update
@@ -26,7 +26,7 @@
 -   source ~/.bashrc
 -   nvm --version (source ~/.bashrc reloads your shell configuration file so that NVM is immediately available. nvm --version verifies that the installation was successful.)
 
-1.  Install Node.js and npm
+2.  Install Node.js and npm
 
 -   Run the following command to install Node.js and npm:
 -   nvm install --lts
@@ -39,7 +39,7 @@
 -   Run the following command to install PostgreSQL:
 -   sudo apt install postgresql
 
-1.  Create a user and database
+2.  Create a user and database
 
 -   Login as the 'postgres' user, which is the default user with administrator privileges on PostgreSQL:
 -   sudo -i -u postgres psql
@@ -62,21 +62,21 @@
 -   Run the following command to install the necessary dependencies for production, excluding development dependencies:
 -   npm install --omit=dev
 
-1.  Configure the .env file
+2.  Configure the .env file
 
 -   Fill the .env file with the environment variables needed for your project. Using VS Code can make this task easier thanks to the remote SSH extension rather than using nano or VIM.
 
-1.  Create the database
+3.  Create the database
 
 -   Run the following command to create tables and initialize the database:
 -   npm run db
 
-1.  Populate the database
+4.  Populate the database
 
 -   Run the following command to populate the database (this is to verify that the application works in production, afterward you'll need to reset the database):
 -   npm run db
 
-1.  Start the project
+5.  Start the project
 
 -   Start the application by running the following command:
 -   npm start
