@@ -90,8 +90,8 @@
 
 2.  Configure Nginx
 
--   Create a configuration file for the "goldenbook" project:
--   sudo nano /etc/nginx/sites-available/goldenbook
+-   Create a configuration file for the "livredor" project:
+-   sudo nano /etc/nginx/sites-available/livredor
 -   You can base it on the default configuration file to start:
 
 server {
@@ -121,7 +121,7 @@ server {
 -   Remove the symbolic link and the default file once it's no longer needed:
 -   sudo rm /etc/nginx/sites-enabled/default
 -   Create a symbolic link to your new configuration file:
--   sudo ln -s /etc/nginx/sites-available/golden-book /etc/nginx/sites-enabled/
+-   sudo ln -s /etc/nginx/sites-available/livredor /etc/nginx/sites-enabled/
 -   Check the configuration to make sure there are no errors:
 -   sudo nginx -t
 -   Restart Nginx to apply the changes:
