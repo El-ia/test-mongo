@@ -95,6 +95,7 @@
 -   You can base it on the default configuration file to start:
 
 # You can use the default configuration file as a starting point:
+```
 server {
     # Port listened to by Nginx
     listen 80;
@@ -116,6 +117,7 @@ server {
         proxy_pass http://127.0.0.1:3000;
     }
 }
+```
 
 -   Use Ctrl + O to save, then Ctrl + X to exit.
 -   Note: Replace <your-domain-name> with the domain name associated with your server.
