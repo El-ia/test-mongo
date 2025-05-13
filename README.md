@@ -3,7 +3,7 @@
 
 ## Launch
 
-###.  Start your VM
+1.  Start your VM
 2.  Make your VM publicly accessible
 3.  Connect via SSH
 
@@ -88,7 +88,7 @@
 -   Run the following command to install Nginx, a web server that can also be used as a reverse proxy:
 -   sudo apt install nginx
 
-1.  Configure Nginx
+2.  Configure Nginx
 
 -   Create a configuration file for the "goldenbook" project:
 -   sudo nano /etc/nginx/sites-available/goldenbook
@@ -116,7 +116,7 @@ server {
 -   Use Ctrl + O to save, then Ctrl + X to exit.
 -   Note: Replace <your-domain-name> with the domain name associated with your server.
 
-1.  Enable the configuration
+3.  Enable the configuration
 
 -   Remove the symbolic link and the default file once it's no longer needed:
 -   sudo rm /etc/nginx/sites-enabled/default
@@ -126,6 +126,8 @@ server {
 -   sudo nginx -t
 -   Restart Nginx to apply the changes:
 -   sudo systemctl restart nginx
+
+## More configurations
 
 1.  Configure HTTPS
 
@@ -139,7 +141,7 @@ server {
 -   sudo certbot --nginx
 -   Note: Make sure the virtual machine is publicly accessible and use the domain name configured for the cloud.
 
-1.  Set up pm2
+2.  Set up pm2
 
 -   Installing PM2
 -   Run the following command to install PM2, a process manager that allows, among other things, to automatically restart our server in case of a crash:
